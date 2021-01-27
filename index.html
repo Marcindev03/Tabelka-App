@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <!--Import materialize.css-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+
+    <title>Potężna możę lepsza tabelka</title>
+
+    <style>
+      input.btn {
+        margin: 2rem 0;
+      }
+
+      * a.btn {
+        margin: 1rem 0;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">
+            <i class="material-icons">storage</i> Potężna tabela</a
+          >
+          <ul class="right">
+            <li class="active"><a href="index.html">Tabela</a></li>
+            <li><a href="about.html">O aplikacji</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="row">
+        <div class="col s8">
+          <div class="row">
+            <div class="col s12">
+              <table class="striped">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Przychód</th>
+                    <th>Koszty</th>
+                    <th>Zysk / Strata</th>
+                  </tr>
+                </thead>
+
+                <tbody id="table-content"></tbody>
+
+                <tfoot>
+                  <tr>
+                    <th>Suma</th>
+                    <td class="green-text" id="totalIncome"></td>
+                    <td class="red-text" id="totalCosts"></td>
+                    <td id="totalProfits"></td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s4">
+          <div class="row">
+            <div class="col s12">
+              <div class="container">
+                <a
+                  href="#modal-add-row"
+                  class="btn waves-effect modal-trigger"
+                  id="add-row-btn"
+                >
+                  <i class="material-icons right">add</i> Dodaj Wiersz
+                </a>
+              </div>
+            </div>
+
+            <div class="col s12">
+              <div class="container">
+                <a href="#!" class="btn waves-effect blue" id="gen-rand-row">
+                  <i class="material-icons right">format_list_numbered</i> Dodaj
+                  losowy wiersz
+                </a>
+              </div>
+            </div>
+
+            <div class="col s12">
+              <div class="container">
+                <a href="#!" class="btn waves-effect red" id="clear-rows">
+                  <i class="material-icons right">clear</i> Wyczyść tabelę
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal-add-row" class="modal">
+            <div class="modal-content">
+              <div class="row">
+                <div class="col s8">
+                  <h3>Dodaj wiersz</h3>
+                </div>
+                <div class="col s4">
+                  <a href="#!" class="right"
+                    ><i class="small material-icons modal-close">clear</i></a
+                  >
+                </div>
+              </div>
+              <form>
+                <label for="date">Data</label>
+                <input type="date" id="date" />
+
+                <label for="revenue">Przychód</label>
+                <input type="number" id="revenue" />
+
+                <label for="costs">Koszty</label>
+                <input type="number" id="costs" />
+
+                <input
+                  type="submit"
+                  value="Dodaj"
+                  class="btn"
+                  id="add-row-submit"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer transparent">
+      <div class="footer-copyright grey darken-3">
+        <div class="container center white-text">
+          Copyright &copy; 2021 Marcin Sacha
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+      integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/app.js"></script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        const elems = document.querySelectorAll('.modal');
+        const instances = M.Modal.init(elems);
+      });
+    </script>
+  </body>
+</html>
