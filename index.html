@@ -16,13 +16,20 @@
     <title>Table App</title>
 
     <style>
-      input.btn {
+      main div {
+        width: 30vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
         margin: 2rem 0;
       }
 
-      * a.btn {
-        margin: 1rem 0;
-        width: 100%;
+      .helper-text {
+        display: none !important;
       }
     </style>
   </head>
@@ -48,100 +55,33 @@
     </nav>
 
     <main>
-      <div class="row">
-        <div class="col s8">
+      <div id="register" class="row">
+        <form id="registerForm" class="col s12">
+          <h2 class="center">Register Form</h2>
           <div class="row">
-            <div class="col s12">
-              <table class="striped">
-                <thead>
-                  <tr>
-                    <th>Data</th>
-                    <th>Przychód</th>
-                    <th>Koszty</th>
-                    <th>Zysk / Strata</th>
-                  </tr>
-                </thead>
-
-                <tbody id="table-content"></tbody>
-
-                <tfoot>
-                  <tr>
-                    <th>Suma</th>
-                    <td class="green-text" id="totalIncome"></td>
-                    <td class="red-text" id="totalCosts"></td>
-                    <td id="totalProfits"></td>
-                  </tr>
-                </tfoot>
-              </table>
+            <div class="input-field col s12">
+              <input id="username" type="text" class="validate" />
+              <label for="username">Username</label>
+              <span class="helper-text" data-error="wrong" data-success="right"
+                >Helper text</span
+              >
             </div>
           </div>
-        </div>
-
-        <div class="col s4">
           <div class="row">
-            <div class="col s12">
-              <div class="container">
-                <a
-                  href="#modal-add-row"
-                  class="btn waves-effect modal-trigger"
-                  id="add-row-btn"
-                >
-                  <i class="material-icons right">add</i> Dodaj Wiersz
-                </a>
-              </div>
-            </div>
-
-            <div class="col s12">
-              <div class="container">
-                <a href="#!" class="btn waves-effect blue" id="gen-rand-row">
-                  <i class="material-icons right">format_list_numbered</i> Dodaj
-                  losowy wiersz
-                </a>
-              </div>
-            </div>
-
-            <div class="col s12">
-              <div class="container">
-                <a href="#!" class="btn waves-effect red" id="clear-rows">
-                  <i class="material-icons right">clear</i> Wyczyść tabelę
-                </a>
-              </div>
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" />
+              <label for="password">Password</label>
+              <span class="helper-text" data-error="wrong" data-success="right"
+                >Helper text</span
+              >
             </div>
           </div>
-
-          <div id="modal-add-row" class="modal">
-            <div class="modal-content">
-              <div class="row">
-                <div class="col s8">
-                  <h3>Dodaj wiersz</h3>
-                </div>
-                <div class="col s4">
-                  <a href="#!" class="right"
-                    ><i class="small material-icons modal-close">clear</i></a
-                  >
-                </div>
-              </div>
-              <form>
-                <label for="date">Data</label>
-                <input type="date" id="date" />
-
-                <label for="revenue">Przychód</label>
-                <input type="number" id="revenue" />
-
-                <label for="costs">Koszty</label>
-                <input type="number" id="costs" />
-
-                <input
-                  type="submit"
-                  value="Dodaj"
-                  class="btn"
-                  id="add-row-submit"
-                />
-              </form>
-            </div>
+          <div>
+            <button class="btn">Register</button>
           </div>
-        </div>
+        </form>
       </div>
+      <div id="home"></div>
     </main>
 
     <footer class="page-footer transparent">
@@ -160,6 +100,7 @@
         const instances = M.Modal.init(elems);
       });
     </script>
-    <script src="build/index.js"></script>
+
+    <script src="build/app.js"></script>
   </body>
 </html>
