@@ -45,13 +45,39 @@
               <a href="index.html">Home</a>
             </li>
             <li><a href="register.html">Register</a></li>
-            <li><a href="login.html">Login</a></li>
           </ul>
         </div>
       </div>
     </nav>
 
-    <main></main>
+    <main>
+      <div id="login" class="row">
+        <form id="loginForm" class="col s12">
+          <h2 class="center">Login Form</h2>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="username" type="text" class="validate" />
+              <label for="username">Username</label>
+              <span class="helper-text" data-error="wrong" data-success="right"
+                >Helper text</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" />
+              <label for="password">Password</label>
+              <span class="helper-text" data-error="wrong" data-success="right"
+                >Helper text</span
+              >
+            </div>
+          </div>
+          <div>
+            <button class="btn">Login</button>
+          </div>
+        </form>
+      </div>
+    </main>
 
     <footer class="page-footer transparent">
       <div class="footer-copyright grey darken-3">
