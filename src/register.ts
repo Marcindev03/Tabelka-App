@@ -3,6 +3,9 @@ interface UserInterface {
   password: string;
 }
 
+if (JSON.parse(localStorage.getItem('isLogged'))) {
+  window.location.href = 'http://127.0.0.1:5500/admin/dashboard.html';
+}
 const form = document.querySelector('#registerForm') as HTMLFormElement;
 
 form.addEventListener('submit', (e) => {

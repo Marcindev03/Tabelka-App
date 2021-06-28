@@ -3,6 +3,10 @@ interface UserInterface {
   password: string;
 }
 
+if (JSON.parse(localStorage.getItem('isLogged'))) {
+  window.location.href = 'http://127.0.0.1:5500/admin/dashboard.html';
+}
+
 document.querySelector('#loginForm').addEventListener('submit', (e) => {
   e.preventDefault();
   const usernameInput = document.querySelector('#username') as HTMLInputElement,
