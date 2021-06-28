@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <title>Register</title>
+
+    <style>
+      main div {
+        width: 30vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      h2 {
+        margin: 2rem 0;
+      }
+
+      .helper-text {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">
+            <i class="material-icons">attach_money</i> Accounting app
+          </a>
+          <ul class="right">
+            <li class="active">
+              <a href="index.html">Home</a>
+            </li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div id="login" class="row">
+        <form id="loginForm" class="col s12">
+          <h2 class="center">Register Form</h2>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="username" type="text" class="validate" />
+              <label for="username">Username</label>
+              <span class="helper-text" data-error="wrong" data-success="right"
+                >Helper text</span
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="password" type="password" class="validate" />
+              <label for="password">Password</label>
+              <span class="helper-text" data-error="wrong" data-success="right"
+                >Helper text</span
+              >
+            </div>
+          </div>
+          <div>
+            <button class="btn">Register</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <footer class="page-footer transparent">
+      <div class="footer-copyright grey darken-3">
+        <div class="container center white-text">
+          Copyright &copy; 2021 Marcin Sacha
+          <span><a href="https://github.com/Marcindev03">Github</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        const elems = document.querySelectorAll('.modal');
+        const instances = M.Modal.init(elems);
+      });
+    </script>
+
+    <script src="build/app.js"></script>
+  </body>
+</html>
