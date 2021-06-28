@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <title>Admin Dashboard</title>
+
+    <style>
+      main {
+        padding-top: 40px;
+      }
+
+      h4 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">
+            <i class="material-icons">attach_money</i> Accounting app
+          </a>
+          <ul class="right">
+            <li class="active">
+              <a href="/admin/dashboard.html">Dashboard</a>
+            </li>
+            <li><a href="/admin/income.html">Income</a></li>
+            <li><a href="/admin/costs.html">Costs</a></li>
+            <li><a href="/admin/earings.html">Earings</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col s9">
+            <h4>Total Value: <span id="totalValue">$200</span></h4>
+          </div>
+          <div class="col s3">
+            <div class="container">
+              <a
+                href="#modal-add-row"
+                class="btn waves-effect modal-trigger"
+                id="add-row-btn"
+              >
+                <i class="material-icons right">add</i> Add Income
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s12">
+            <div class="row">
+              <div class="col s12">
+                <table class="striped">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Value</th>
+                      <th>Note</th>
+                    </tr>
+                  </thead>
+
+                  <tbody id="table-content"></tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div id="modal-add-row" class="modal">
+            <div class="modal-content">
+              <div class="row">
+                <div class="col s8">
+                  <h3>Dodaj wiersz</h3>
+                </div>
+                <div class="col s4">
+                  <a href="#!" class="right"
+                    ><i class="small material-icons modal-close">clear</i></a
+                  >
+                </div>
+              </div>
+              <form>
+                <label for="date">Data</label>
+                <input type="date" id="date" />
+
+                <label for="revenue">Przychód</label>
+                <input type="number" id="revenue" />
+
+                <label for="costs">Koszty</label>
+                <input type="number" id="costs" />
+
+                <input
+                  type="submit"
+                  value="Dodaj"
+                  class="btn"
+                  id="add-row-submit"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer transparent">
+      <div class="footer-copyright grey darken-3">
+        <div class="container center white-text">
+          Copyright &copy; 2021 Marcin Sacha
+          <span><a href="https://github.com/Marcindev03">Github</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const elems = document.querySelectorAll('.modal');
+        const instances = M.Modal.init(elems);
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+        const elems = document.querySelectorAll('.tooltipped');
+        const instances = M.Tooltip.init(elems);
+      });
+    </script>
+
+    <script src="../build/app.js"></script>
+  </body>
+</html>
