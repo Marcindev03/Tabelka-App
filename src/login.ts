@@ -3,7 +3,7 @@ interface UserInterface {
   password: string;
 }
 
-if (JSON.parse(localStorage.getItem('isLogged'))) {
+if (checkIsLogged()) {
   window.location.href = 'http://127.0.0.1:5500/admin/dashboard.html';
 }
 

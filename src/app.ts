@@ -19,8 +19,12 @@ const saveLoggedUser = () => {
   }
 };
 
-if (localStorage.getItem('isLogged')) {
-  console.log('logged');
-} else {
-  console.log('logged out');
-}
+const checkIsLogged = (): boolean => {
+  if (JSON.parse(localStorage.getItem('isLogged'))) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+console.log(`Logged in: ${checkIsLogged()}`);
