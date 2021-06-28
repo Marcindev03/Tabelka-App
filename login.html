@@ -27,10 +27,6 @@
       h2 {
         margin: 2rem 0;
       }
-
-      .helper-text {
-        display: none !important;
-      }
     </style>
   </head>
   <body>
@@ -55,21 +51,27 @@
         <form id="loginForm" class="col s12">
           <h2 class="center">Login Form</h2>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="username" type="text" class="validate" />
-              <label for="username">Username</label>
-              <span class="helper-text" data-error="wrong" data-success="right"
-                >Helper text</span
-              >
+            <div class="col s12">
+              <div class="input-field inline">
+                <input id="username" type="text" class="validate" />
+                <label for="username">Username</label>
+                <span
+                  class="helper-text"
+                  data-error="You must write username"
+                ></span>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate" />
-              <label for="password">Password</label>
-              <span class="helper-text" data-error="wrong" data-success="right"
-                >Helper text</span
-              >
+            <div class="col s12">
+              <div class="input-field inline">
+                <input id="password" type="password" class="validate" />
+                <label for="password">Password</label>
+                <span
+                  class="helper-text"
+                  data-error="You must include pasword"
+                ></span>
+              </div>
             </div>
           </div>
           <div>
@@ -97,5 +99,6 @@
     </script>
 
     <script src="build/app.js"></script>
+    <script src="build/login.js"></script>
   </body>
 </html>
