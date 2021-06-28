@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <title>Admin Dashboard</title>
+
+    <style>
+      main {
+        padding-top: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="index.html" class="brand-logo">
+            <i class="material-icons">attach_money</i> Accounting app
+          </a>
+          <ul class="right">
+            <li class="active">
+              <a href="/admin/dashboard.html">Dashboard</a>
+            </li>
+            <li><a href="/admin/income.html">Income</a></li>
+            <li><a href="/admin/costs.html">Costs</a></li>
+            <li><a href="/admin/earings.html">Earings</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col s4">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Total Income</span>
+                <h3>$400</h3>
+              </div>
+              <div class="card-action">
+                <a href="/admin/income.html">Go to income section</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Total Costs</span>
+                <h3 class="red-text">-$200</h3>
+              </div>
+              <div class="card-action">
+                <a href="/admin/costs.html">Go to costs section</a>
+              </div>
+            </div>
+          </div>
+          <div class="col s4">
+            <div class="card blue-grey darken-1">
+              <div class="card-content white-text">
+                <span class="card-title">Total Earnings</span>
+                <h3 class="green-text">+$200</h3>
+              </div>
+              <div class="card-action">
+                <a href="/admin/earings.html">Go to earnings section</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer transparent">
+      <div class="footer-copyright grey darken-3">
+        <div class="container center white-text">
+          Copyright &copy; 2021 Marcin Sacha
+          <span><a href="https://github.com/Marcindev03">Github</a></span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function () {
+        const elems = document.querySelectorAll('.modal');
+        const instances = M.Modal.init(elems);
+      });
+    </script>
+
+    <script src="../build/app.js"></script>
+  </body>
+</html>
