@@ -9,13 +9,16 @@ const setErrMessage = (input: HTMLInputElement, errMessage: string): void => {
   errContainer.dataset.error = errMessage;
 };
 
-const saveLoggedUser = () => {
+const saveLoggedUser = (username: string) => {
   if (localStorage.getItem('isLogged')) {
     let isLogged: boolean = JSON.parse(localStorage.getItem('isLogged'));
     isLogged = true;
     localStorage.setItem('isLogged', JSON.stringify(isLogged));
+
+    localStorage.setItem('loggedUser', JSON.stringify(username));
   } else {
     localStorage.setItem('isLogged', JSON.stringify(true));
+    localStorage.setItem('loggedUser', JSON.stringify(username));
   }
 };
 
