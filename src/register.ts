@@ -41,6 +41,7 @@ form.addEventListener('submit', (e) => {
     }
   } else {
     saveUser(username, password);
+    saveLoggedUser();
 
     form.reset();
 
