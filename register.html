@@ -27,10 +27,6 @@
       h2 {
         margin: 2rem 0;
       }
-
-      .helper-text {
-        display: none !important;
-      }
     </style>
   </head>
   <body>
@@ -51,29 +47,29 @@
     </nav>
 
     <main>
-      <div id="login" class="row">
-        <form id="loginForm" class="col s12">
+      <div id="regiser" class="row">
+        <form id="registerForm" class="col s12">
           <h2 class="center">Register Form</h2>
           <div class="row">
             <div class="input-field col s12">
               <input id="username" type="text" class="validate" />
               <label for="username">Username</label>
-              <span class="helper-text" data-error="wrong" data-success="right"
-                >Helper text</span
-              >
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
               <input id="password" type="password" class="validate" />
               <label for="password">Password</label>
-              <span class="helper-text" data-error="wrong" data-success="right"
-                >Helper text</span
-              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="cf-password" type="password" class="validate" />
+              <label for="cf-password">Confirm password</label>
             </div>
           </div>
           <div>
-            <button class="btn">Register</button>
+            <button id="registerBtn" class="btn">Register</button>
           </div>
         </form>
       </div>
@@ -97,5 +93,6 @@
     </script>
 
     <script src="build/app.js"></script>
+    <script src="build/register.js"></script>
   </body>
 </html>
