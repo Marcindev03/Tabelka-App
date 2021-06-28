@@ -17,23 +17,61 @@ form.addEventListener('submit', (e) => {
     password: string = passwordInput.value,
     cfPassword: string = cfPasswordInput.value;
 
-  if (!username || !password || !cfPassword) {
+  if (!username || !password || !cfPassword || password !== cfPassword) {
     if (!username) {
+      setErrMessage(usernameInput, 'You must inclide username');
       changeClassName(usernameInput);
     }
     if (!password) {
+      setErrMessage(passwordInput, 'You must inclide password');
       changeClassName(passwordInput);
     }
     if (!cfPassword) {
+      setErrMessage(cfPasswordInput, 'You must confirm password');
+      changeClassName(cfPasswordInput);
+    }
+    if (password !== cfPassword) {
+      console.log(password, cfPassword);
+
+      setErrMessage(passwordInput, 'Passwords are not the same');
+      setErrMessage(cfPasswordInput, 'Passwords are not the same');
+
+      changeClassName(passwordInput);
       changeClassName(cfPasswordInput);
     }
   } else {
-    const user: UserInterface = { username, password };
-    localStorage.setItem('user', JSON.stringify(user));
+    saveUser(username, password);
+
+    form.reset();
+
+    window.location.href = 'http://127.0.0.1:5500/admin/dashboard.html';
   }
 });
 
 const changeClassName = (input: HTMLInputElement): void => {
   input.classList.add('invalid');
   input.classList.remove('valid');
+};
+
+const setErrMessage = (input: HTMLInputElement, errMessage: string): void => {
+  const errContainer = input.nextElementSibling
+    .nextElementSibling as HTMLSpanElement;
+  errContainer.dataset.error = errMessage;
+};
+
+const saveUser = (username: string, password: string): void => {
+  if (!localStorage.getItem('users')) {
+    const users: UserInterface[] = [];
+    const user: UserInterface = { username, password };
+
+    users.push(user);
+
+    localStorage.setItem('users', JSON.stringify(users));
+  } else {
+    let users: UserInterface[] = JSON.parse(localStorage.getItem('users'));
+    const user: UserInterface = { username, password };
+    users.push(user);
+
+    localStorage.setItem('users', JSON.stringify(users));
+  }
 };

@@ -51,23 +51,42 @@
         <form id="registerForm" class="col s12">
           <h2 class="center">Register Form</h2>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="username" type="text" class="validate" />
-              <label for="username">Username</label>
+            <div class="col s12">
+              <div class="input-field inline">
+                <input id="username" type="text" class="validate" />
+                <label for="username">Username</label>
+                <span
+                  class="helper-text"
+                  data-error="You must write username"
+                ></span>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="password" type="password" class="validate" />
-              <label for="password">Password</label>
+            <div class="col s12">
+              <div class="input-field inline">
+                <input id="password" type="password" class="validate" />
+                <label for="password">Password</label>
+                <span
+                  class="helper-text"
+                  data-error="You must include pasword"
+                ></span>
+              </div>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
-              <input id="cf-password" type="password" class="validate" />
-              <label for="cf-password">Confirm password</label>
+            <div class="col s12">
+              <div class="input-field inline">
+                <input id="cf-password" type="password" class="validate" />
+                <label for="cf-password">Confirm Password</label>
+                <span
+                  class="helper-text"
+                  data-error="You must write username"
+                ></span>
+              </div>
             </div>
           </div>
+
           <div>
             <button id="registerBtn" class="btn">Register</button>
           </div>
