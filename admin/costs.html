@@ -13,7 +13,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
 
-    <title>Admin Dashboard</title>
+    <title>Costs</title>
 
     <style>
       main {
@@ -48,7 +48,7 @@
       <div class="container">
         <div class="row">
           <div class="col s9">
-            <h4>Total Income: <span id="totalValue">$200</span></h4>
+            <h4>Total Costs: <span id="totalValue">$200</span></h4>
           </div>
           <div class="col s3">
             <div class="container">
@@ -57,7 +57,7 @@
                 class="btn waves-effect modal-trigger"
                 id="add-row-btn"
               >
-                <i class="material-icons right">add</i> Add Income
+                <i class="material-icons right">add</i> Add Cost
               </a>
             </div>
           </div>
@@ -85,7 +85,7 @@
             <div class="modal-content">
               <div class="row">
                 <div class="col s8">
-                  <h3>Dodaj wiersz</h3>
+                  <h3>Add Cost</h3>
                 </div>
                 <div class="col s4">
                   <a href="#!" class="right"
@@ -93,19 +93,19 @@
                   >
                 </div>
               </div>
-              <form>
-                <label for="date">Data</label>
+              <form id="addCostForm">
+                <label for="date">Date</label>
                 <input type="date" id="date" />
 
-                <label for="revenue">Przychód</label>
-                <input type="number" id="revenue" />
+                <label for="value">Value</label>
+                <input type="number" id="value" />
 
-                <label for="costs">Koszty</label>
-                <input type="number" id="costs" />
+                <label for="note">Note</label>
+                <input type="text" id="note" />
 
                 <input
                   type="submit"
-                  value="Dodaj"
+                  value="Add"
                   class="btn"
                   id="add-row-submit"
                 />
