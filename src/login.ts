@@ -34,6 +34,9 @@ document.querySelector('#loginForm').addEventListener('submit', (e) => {
       if (user.password === password) {
         const form = document.querySelector('#loginForm') as HTMLFormElement;
         form.reset();
+
+        saveLoggedUser();
+
         window.location.href = 'http://127.0.0.1:5500/admin/dashboard.html';
       } else {
         console.log(user.password, password);
@@ -43,3 +46,13 @@ document.querySelector('#loginForm').addEventListener('submit', (e) => {
     }
   }
 });
+
+const saveLoggedUser = () => {
+  if (localStorage.getItem('isLogged')) {
+    let isLogged: boolean = JSON.parse(localStorage.getItem('isLogged'));
+    isLogged = true;
+    localStorage.setItem('isLogged', JSON.stringify(isLogged));
+  } else {
+    localStorage.setItem('isLogged', JSON.stringify(true));
+  }
+};
