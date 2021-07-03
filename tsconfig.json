@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "rootDir": "./src",
-        "outDir": "./build"
+        "outDir": "./build",
+        "lib": ["ES2015", "DOM"]
     }
 }
