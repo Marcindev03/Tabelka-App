@@ -1,3 +1,14 @@
+interface ItemInterface {
+  date: string;
+  value: number;
+  note: string;
+}
+
+interface ItemsInterface {
+  owner: string;
+  data: CostItemInterface[];
+}
+
 const changeClassName = (input: HTMLInputElement): void => {
   input.classList.add('invalid');
   input.classList.remove('valid');
@@ -28,6 +39,44 @@ const checkIsLogged = (): boolean => {
   } else {
     return false;
   }
+};
+
+const generateRow = (
+  date: string,
+  value: number,
+  note: string,
+  tableContent: HTMLTableElement
+): void => {
+  const row = document.createElement('tr');
+
+  row.innerHTML = `
+  <td>${date}</td>
+  <td class="red-text">$${value}</td>
+  <td>${note}</td>
+  `;
+
+  tableContent.appendChild(row);
+};
+
+const getTodayDate = (): string => {
+  const utc: string = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
+
+  return utc;
+};
+
+const generateRows = async (
+  type: string,
+  owner: string,
+  tableContent: HTMLTableElement
+) => {
+  const globalRows: ItemsInterface[] = JSON.parse(localStorage.getItem(type));
+  const loggedUserRows: ItemInterface[] = globalRows.filter(
+    (e) => e.owner === owner
+  )[0].data;
+
+  loggedUserRows.map(({ date, value, note }) => {
+    generateRow(date, value, note, tableContent);
+  });
 };
 
 console.log(`Logged in: ${checkIsLogged()}`);
