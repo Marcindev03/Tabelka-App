@@ -1,4 +1,5 @@
 interface ItemInterface {
+  id: string;
   date: string;
   value: number;
   note: string;
@@ -42,6 +43,7 @@ const checkIsLogged = (): boolean => {
 };
 
 const generateRow = (
+  id: string,
   date: string,
   value: number,
   note: string,
@@ -60,6 +62,7 @@ const generateRow = (
   </td>
   `;
 
+  row.dataset.id = id;
   row.addEventListener('click', (e) => deleteRow(e));
 
   tableContent.appendChild(row);
@@ -89,8 +92,8 @@ const generateRows = async (
     (e) => e.owner === owner
   )[0].data;
 
-  loggedUserRows.map(({ date, value, note }) => {
-    generateRow(date, value, note, tableContent);
+  loggedUserRows.map(({ id, date, value, note }) => {
+    generateRow(id, date, value, note, tableContent);
   });
 };
 

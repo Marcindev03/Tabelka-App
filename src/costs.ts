@@ -15,6 +15,7 @@ if (!checkIsLogged()) {
 })();
 
 interface CostItemInterface {
+  id: string;
   date: string;
   value: number;
   note: string;
@@ -45,14 +46,17 @@ addCostForm.addEventListener('submit', (e): void => {
   if (!value || !note) {
     console.error("Value or note doesn't exist");
   } else {
+    const id: string = Math.random().toString(16).slice(2);
+
     const cost: CostItemInterface = {
+      id,
       date,
       value,
       note,
     };
 
     saveCost(cost);
-    generateRow(date, value, note, tableContent);
+    generateRow(id, date, value, note, tableContent);
     addCostForm.reset();
   }
 });
