@@ -53,7 +53,19 @@ const generateRow = (
   <td>${date}</td>
   <td class="red-text">$${value}</td>
   <td>${note}</td>
+  <td>
+    <a href="#!" class="right clear-row">
+      <i class="material-icons grey-text text-darken-3">clear</i>
+    </a>
+  </td>
   `;
+
+  row.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName.toLowerCase() === 'i') {
+      target.parentElement.parentElement.parentElement.remove();
+    }
+  });
 
   tableContent.appendChild(row);
 };
