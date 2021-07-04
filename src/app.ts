@@ -60,14 +60,17 @@ const generateRow = (
   </td>
   `;
 
-  row.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    if (target.tagName.toLowerCase() === 'i') {
-      target.parentElement.parentElement.parentElement.remove();
-    }
-  });
+  row.addEventListener('click', (e) => deleteRow(e));
 
   tableContent.appendChild(row);
+};
+
+const deleteRow = (e: Event) => {
+  // Delete row from UI
+  const target = e.target as HTMLElement;
+  if (target.tagName.toLowerCase() === 'i') {
+    target.parentElement.parentElement.parentElement.remove();
+  }
 };
 
 const getTodayDate = (): string => {
