@@ -79,4 +79,23 @@ const generateRows = async (
   });
 };
 
+const menageLogoutButton = (): void => {
+  const logoutButton = document.querySelector<HTMLLIElement>('#logout-button');
+
+  if (logoutButton) {
+    if (JSON.parse(localStorage.getItem('isLogged'))) {
+      logoutButton.addEventListener('click', () => {
+        localStorage.setItem('isLogged', JSON.stringify(false));
+        localStorage.setItem('loggedUser', JSON.stringify(null));
+
+        window.location.href = 'http://127.0.0.1:5500/index.html';
+      });
+    } else {
+      logoutButton.remove();
+    }
+  }
+};
+
+menageLogoutButton();
+
 console.log(`Logged in: ${checkIsLogged()}`);
